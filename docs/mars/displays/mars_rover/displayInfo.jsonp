@@ -1,0 +1,165 @@
+__loadDisplayInfo__713614ec({
+  "name": "mars rover",
+  "description": "Selected images taken by the Mars Curiosity rover from 2014-2015, with classifications",
+  "tags": [],
+  "keycols": ["camera", "class", "hex", "img_src", "id"],
+  "keysig": null,
+  "metas": [
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 6,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "Image identifier",
+      "type": "number",
+      "varname": "id"
+    },
+    {
+      "maxnchar": 21,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "Camera type",
+      "type": "string",
+      "varname": "camera"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 4,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["dates"],
+      "label": "Mars solar day of image capture",
+      "type": "number",
+      "varname": "sol"
+    },
+    {
+      "maxnchar": 10,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["dates"],
+      "label": "Earth date of image capture",
+      "type": "date",
+      "varname": "earth_date"
+    },
+    {
+      "maxnchar": 20,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "Image classification",
+      "type": "string",
+      "varname": "class"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 4,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["image attributes"],
+      "label": "Image width in pixels",
+      "type": "number",
+      "varname": "width"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 4,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["image attributes"],
+      "label": "Image height in pixels",
+      "type": "number",
+      "varname": "height"
+    },
+    {
+      "log": true,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 7,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["image attributes"],
+      "label": "File size in bytes",
+      "type": "number",
+      "varname": "filesize"
+    },
+    {
+      "maxnchar": 7,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["image attributes"],
+      "label": "Hex color code for primary quantized color",
+      "type": "string",
+      "varname": "hex"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 2,
+      "maxnchar": 9,
+      "sortable": true,
+      "filterable": true,
+      "tags": ["statistics", "life expectancy"],
+      "label": "HSV hue value for primary quantized color",
+      "type": "number",
+      "varname": "hue"
+    }
+  ],
+  "state": {
+    "layout": {
+      "viewtype": "grid",
+      "page": 1,
+      "ncol": 5,
+      "type": "layout"
+    },
+    "labels": {
+      "varnames": ["comments", "earth_date", "class"],
+      "type": "labels"
+    },
+    "sort": [],
+    "filter": []
+  },
+  "views": [],
+  "inputs": {
+    "inputs": [
+      {
+        "height": 6,
+        "width": 100,
+        "type": "text",
+        "active": true,
+        "label": "Comments about this image",
+        "name": "comments"
+      },
+      {
+        "options": ["no", "yes"],
+        "type": "radio",
+        "active": true,
+        "label": "Is the image classified correctly?",
+        "name": "correct_class"
+      }
+    ],
+    "storageInterface": {
+      "type": "localStorage"
+    },
+    "feedbackInterface": {
+      "feedbackEmail": "johndoe123@fakemail.net",
+      "includeMetaVars": ["class"]
+    }
+  },
+  "paneltype": "img",
+  "panelformat": null,
+  "panelaspect": 1.5,
+  "panelsource": {
+    "type": "file"
+  },
+  "thumbnailurl": "http://mars.jpl.nasa.gov/msl-raw-images/msss/00565/mhli/0565MH0003250050201853I01_DXXX.jpg"
+})

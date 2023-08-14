@@ -6,6 +6,9 @@ library(dplyr)
 sets <- readr::read_rds("examples/lego/_data/sets.rds")
 color_ct <- readr::read_csv("examples/lego/_data/set_color_ct.csv")
 
+sets <- sets |>
+  mutate(decade = factor(10 * (year %/% 10)))
+
 x <- get_test_subset(color_ct, sets, by = "inv_id")
 x <- filter(color_ct, inv_id == 114094)
 

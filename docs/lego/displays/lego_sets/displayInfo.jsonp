@@ -206,6 +206,16 @@ __loadDisplayInfo__6fbd7f77({
       "varname": "n_versions"
     },
     {
+      "levels": ["1940", "1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020"],
+      "maxnchar": 4,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "decade",
+      "type": "factor",
+      "varname": "decade"
+    },
+    {
       "source": {
         "isLocal": true,
         "type": "file"
@@ -253,7 +263,7 @@ __loadDisplayInfo__6fbd7f77({
         "name": "own_it"
       },
       {
-        "options": "yes",
+        "options": ["yes"],
         "type": "checkbox",
         "active": true,
         "label": "I want this set",

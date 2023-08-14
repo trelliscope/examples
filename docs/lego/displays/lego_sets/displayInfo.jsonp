@@ -1,0 +1,275 @@
+__loadDisplayInfo__6fbd7f77({
+  "name": "lego sets",
+  "description": "lego sets",
+  "tags": [],
+  "keycols": ["set_num"],
+  "metas": [
+    {
+      "maxnchar": 20,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "set_num",
+      "type": "string",
+      "varname": "set_num"
+    },
+    {
+      "maxnchar": 93,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "name",
+      "type": "string",
+      "varname": "name"
+    },
+    {
+      "log": false,
+      "locale": false,
+      "digits": 0,
+      "maxnchar": 4,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "year",
+      "type": "number",
+      "varname": "year"
+    },
+    {
+      "source": {
+        "isLocal": false,
+        "type": "file"
+      },
+      "aspect": 1.2,
+      "paneltype": "img",
+      "maxnchar": 0,
+      "sortable": false,
+      "filterable": false,
+      "tags": [],
+      "label": "img_url",
+      "type": "panel",
+      "varname": "img_url"
+    },
+    {
+      "maxnchar": 32,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "theme",
+      "type": "string",
+      "varname": "theme"
+    },
+    {
+      "maxnchar": 42,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "sub_theme",
+      "type": "string",
+      "varname": "sub_theme"
+    },
+    {
+      "maxnchar": 6,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "inv_id",
+      "type": "string",
+      "varname": "inv_id"
+    },
+    {
+      "maxnchar": 2,
+      "sortable": false,
+      "filterable": false,
+      "tags": [],
+      "label": "rebrickable_url",
+      "type": "href",
+      "varname": "rebrickable_url"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 5,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_parts",
+      "type": "number",
+      "varname": "n_parts"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 3,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_spare_parts",
+      "type": "number",
+      "varname": "n_spare_parts"
+    },
+    {
+      "log": true,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 3,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_part_types",
+      "type": "number",
+      "varname": "n_part_types"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 2,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_colors",
+      "type": "number",
+      "varname": "n_colors"
+    },
+    {
+      "maxnchar": "NA",
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "prim_part_num",
+      "type": "string",
+      "varname": "prim_part_num"
+    },
+    {
+      "maxnchar": "NA",
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "prim_part_name",
+      "type": "string",
+      "varname": "prim_part_name"
+    },
+    {
+      "maxnchar": "NA",
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "prim_color_name",
+      "type": "string",
+      "varname": "prim_color_name"
+    },
+    {
+      "maxnchar": "NA",
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "prim_color_hex",
+      "type": "string",
+      "varname": "prim_color_hex"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 5,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_minifigs",
+      "type": "number",
+      "varname": "n_minifigs"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 3,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_minifig_parts",
+      "type": "number",
+      "varname": "n_minifig_parts"
+    },
+    {
+      "log": false,
+      "locale": true,
+      "digits": 0,
+      "maxnchar": 2,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "n_versions",
+      "type": "number",
+      "varname": "n_versions"
+    },
+    {
+      "source": {
+        "isLocal": true,
+        "type": "file"
+      },
+      "aspect": 1.5,
+      "paneltype": "iframe",
+      "maxnchar": 0,
+      "sortable": false,
+      "filterable": false,
+      "tags": [],
+      "label": "color_map",
+      "type": "panel",
+      "varname": "color_map"
+    }
+  ],
+  "state": {
+    "layout": {
+      "viewtype": "grid",
+      "page": 1,
+      "ncol": 4,
+      "type": "layout"
+    },
+    "labels": {
+      "varnames": ["name", "year", "theme", "n_parts", "rebrickable_url"],
+      "type": "labels"
+    },
+    "sort": [
+      {
+        "metatype": "number",
+        "dir": "desc",
+        "varname": "n_parts",
+        "type": "sort"
+      }
+    ],
+    "filter": []
+  },
+  "views": [],
+  "inputs": {
+    "inputs": [
+      {
+        "options": ["no", "yes"],
+        "type": "radio",
+        "active": true,
+        "label": "I own this set",
+        "name": "own_it"
+      },
+      {
+        "options": "yes",
+        "type": "checkbox",
+        "active": true,
+        "label": "I want this set",
+        "name": "want_it"
+      }
+    ],
+    "storageInterface": {
+      "type": "localStorage"
+    },
+    "feedbackInterface": {
+      "feedbackEmail": "johndoe123@fakemail.net",
+      "includeMetaVars": []
+    }
+  },
+  "primarypanel": "img_url",
+  "thumbnailurl": "https://cdn.rebrickable.com/media/sets/001-1.jpg",
+  "infoOnLoad": false,
+  "hasCustomInfo": false
+})

@@ -108,7 +108,7 @@ __loadDisplayInfo__713614ec({
       "maxnchar": 9,
       "sortable": true,
       "filterable": true,
-      "tags": ["statistics", "life expectancy"],
+      "tags": ["image attrbutes"],
       "label": "HSV hue value for primary quantized color",
       "type": "number",
       "varname": "hue"

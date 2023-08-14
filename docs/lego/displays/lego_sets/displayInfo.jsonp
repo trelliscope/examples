@@ -271,5 +271,5 @@ __loadDisplayInfo__6fbd7f77({
   "primarypanel": "img_url",
   "thumbnailurl": "https://cdn.rebrickable.com/media/sets/001-1.jpg",
   "infoOnLoad": false,
-  "hasCustomInfo": false
+  "hasCustomInfo": true
 })

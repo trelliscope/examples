@@ -52,7 +52,8 @@ d <- sets %>%
     input_checkbox(name = "want_it", label = "I want this set",
       options = "yes"),
     email = "johndoe123@fakemail.net"
-  )
+  ) |>
+  set_info_html("examples/lego/info.html")
 
 view_trelliscope(d)
 

@@ -9,7 +9,7 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": true,
       "filterable": true,
       "tags": [],
-      "label": "set_num",
+      "label": "Set number",
       "type": "string",
       "varname": "set_num"
     },
@@ -17,8 +17,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 93,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "name",
+      "tags": ["meta"],
+      "label": "Set name",
       "type": "string",
       "varname": "name"
     },
@@ -29,8 +29,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 4,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "year",
+      "tags": ["meta"],
+      "label": "Year released",
       "type": "number",
       "varname": "year"
     },
@@ -45,7 +45,7 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": false,
       "filterable": false,
       "tags": [],
-      "label": "img_url",
+      "label": "Image URL",
       "type": "panel",
       "varname": "img_url"
     },
@@ -53,8 +53,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 32,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "theme",
+      "tags": ["meta"],
+      "label": "Set theme",
       "type": "string",
       "varname": "theme"
     },
@@ -62,8 +62,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 42,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "sub_theme",
+      "tags": ["meta"],
+      "label": "Set sub-theme",
       "type": "string",
       "varname": "sub_theme"
     },
@@ -72,7 +72,7 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": true,
       "filterable": true,
       "tags": [],
-      "label": "inv_id",
+      "label": "Inventory ID",
       "type": "string",
       "varname": "inv_id"
     },
@@ -80,8 +80,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 2,
       "sortable": false,
       "filterable": false,
-      "tags": [],
-      "label": "rebrickable_url",
+      "tags": ["links"],
+      "label": "View the set on rebrickable.com",
       "type": "href",
       "varname": "rebrickable_url"
     },
@@ -92,8 +92,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 5,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "n_parts",
+      "tags": ["parts"],
+      "label": "Total number of parts",
       "type": "number",
       "varname": "n_parts"
     },
@@ -104,8 +104,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 3,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "n_spare_parts",
+      "tags": ["parts"],
+      "label": "Number of spare parts",
       "type": "number",
       "varname": "n_spare_parts"
     },
@@ -116,8 +116,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 3,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "n_part_types",
+      "tags": ["parts"],
+      "label": "Number of part types",
       "type": "number",
       "varname": "n_part_types"
     },
@@ -128,8 +128,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": 2,
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "n_colors",
+      "tags": ["colors"],
+      "label": "Number of distinct colors",
       "type": "number",
       "varname": "n_colors"
     },
@@ -137,8 +137,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": "NA",
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "prim_part_num",
+      "tags": ["parts"],
+      "label": "Most common part number",
       "type": "string",
       "varname": "prim_part_num"
     },
@@ -146,8 +146,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": "NA",
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "prim_part_name",
+      "tags": ["parts"],
+      "label": "Most common part name",
       "type": "string",
       "varname": "prim_part_name"
     },
@@ -155,8 +155,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": "NA",
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "prim_color_name",
+      "tags": ["colors"],
+      "label": "Most common color name",
       "type": "string",
       "varname": "prim_color_name"
     },
@@ -164,8 +164,8 @@ __loadDisplayInfo__6fbd7f77({
       "maxnchar": "NA",
       "sortable": true,
       "filterable": true,
-      "tags": [],
-      "label": "prim_color_hex",
+      "tags": ["colors"],
+      "label": "Most common color hex code",
       "type": "string",
       "varname": "prim_color_hex"
     },
@@ -173,11 +173,11 @@ __loadDisplayInfo__6fbd7f77({
       "log": false,
       "locale": true,
       "digits": 0,
-      "maxnchar": 5,
+      "maxnchar": 3,
       "sortable": true,
       "filterable": true,
       "tags": [],
-      "label": "n_minifigs",
+      "label": "Number of minifigs",
       "type": "number",
       "varname": "n_minifigs"
     },
@@ -189,7 +189,7 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": true,
       "filterable": true,
       "tags": [],
-      "label": "n_minifig_parts",
+      "label": "Number of minifig parts",
       "type": "number",
       "varname": "n_minifig_parts"
     },
@@ -201,9 +201,21 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": true,
       "filterable": true,
       "tags": [],
-      "label": "n_versions",
+      "label": "Number of versions of the set",
       "type": "number",
       "varname": "n_versions"
+    },
+    {
+      "digits": 2,
+      "log": true,
+      "code": "USD",
+      "maxnchar": 6,
+      "sortable": true,
+      "filterable": true,
+      "tags": [],
+      "label": "Retail price (USD) from BrickEconomy.com",
+      "type": "currency",
+      "varname": "retail"
     },
     {
       "levels": ["1940", "1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020"],
@@ -211,7 +223,7 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": true,
       "filterable": true,
       "tags": [],
-      "label": "decade",
+      "label": "Decade released",
       "type": "factor",
       "varname": "decade"
     },
@@ -229,6 +241,24 @@ __loadDisplayInfo__6fbd7f77({
       "label": "color_map",
       "type": "panel",
       "varname": "color_map"
+    },
+    {
+      "maxnchar": 2,
+      "sortable": false,
+      "filterable": false,
+      "tags": ["links"],
+      "label": "View the set on BrickEconomy.com",
+      "type": "href",
+      "varname": "brickeconomy_url"
+    },
+    {
+      "maxnchar": 2,
+      "sortable": false,
+      "filterable": false,
+      "tags": [],
+      "label": "figures_link",
+      "type": "href",
+      "varname": "figures_link"
     }
   ],
   "state": {
@@ -252,7 +282,107 @@ __loadDisplayInfo__6fbd7f77({
     ],
     "filter": []
   },
-  "views": [],
+  "views": [
+    {
+      "name": "90s sets",
+      "state": {
+        "layout": {
+          "viewtype": "grid",
+          "page": 1,
+          "ncol": 4,
+          "type": "layout"
+        },
+        "labels": {
+          "varnames": ["set_num"],
+          "type": "labels"
+        },
+        "sort": [
+          {
+            "metatype": "number",
+            "dir": "asc",
+            "varname": "year",
+            "type": "sort"
+          }
+        ],
+        "filter": [
+          {
+            "values": [],
+            "regexp": null,
+            "metatype": "factor",
+            "filtertype": "category",
+            "varname": "decade",
+            "type": "filter"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sets with 1000+ parts",
+      "state": {
+        "layout": {
+          "viewtype": "grid",
+          "page": 1,
+          "ncol": 3,
+          "type": "layout"
+        },
+        "labels": {
+          "varnames": ["set_num"],
+          "type": "labels"
+        },
+        "sort": [
+          {
+            "metatype": "number",
+            "dir": "desc",
+            "varname": "n_parts",
+            "type": "sort"
+          }
+        ],
+        "filter": [
+          {
+            "max": null,
+            "min": 1000,
+            "metatype": "number",
+            "filtertype": "numberrange",
+            "varname": "n_parts",
+            "type": "filter"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Star Wars sets",
+      "state": {
+        "layout": {
+          "viewtype": "grid",
+          "page": 1,
+          "ncol": 3,
+          "type": "layout"
+        },
+        "labels": {
+          "varnames": ["set_num"],
+          "type": "labels"
+        },
+        "sort": [
+          {
+            "metatype": "number",
+            "dir": "desc",
+            "varname": "n_parts",
+            "type": "sort"
+          }
+        ],
+        "filter": [
+          {
+            "values": ["Star Wars"],
+            "regexp": null,
+            "metatype": "string",
+            "filtertype": "category",
+            "varname": "theme",
+            "type": "filter"
+          }
+        ]
+      }
+    }
+  ],
   "inputs": {
     "inputs": [
       {
@@ -274,7 +404,7 @@ __loadDisplayInfo__6fbd7f77({
       "type": "localStorage"
     },
     "feedbackInterface": {
-      "feedbackEmail": "johndoe123@fakemail.net",
+      "feedbackEmail": null,
       "includeMetaVars": []
     }
   },

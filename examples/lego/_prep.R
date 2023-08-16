@@ -126,7 +126,10 @@ tmp <- sets3 |>
 sets4 <- tmp |>
   left_join(select(set_vers, -n), by = "set_num")
 
-write_rds(sets4, "examples/lego/sets.rds")
+sets5 <- sets4 |>
+  left_join(rtl, by = "set_num")
+
+readr::write_rds(sets5, "examples/lego/_data/sets.rds")
 
 set_nums <- sets4 |>
   select(set_num, minifig_ids) |>
@@ -141,7 +144,7 @@ set_nums <- sets4 |>
 figs <- db$minifigs |>
   left_join(set_nums, by = "fig_num")
 
-write_rds(figs, "examples/lego/minifigs.rds")
+write_rds(figs, "examples/lego/_data/minifigs.rds")
 
 color_ct <- db$inventory_parts |>
   summarise(
@@ -155,7 +158,7 @@ color_ct <- db$inventory_parts |>
 
 color_ct <- filter(color_ct, inv_id %in% sets4$inv_id)
 
-write_csv(color_ct, "examples/lego/set_color_ct.csv")
+write_csv(color_ct, "examples/lego/_data/set_color_ct.csv")
 
 # https://codepen.io/figle/pen/qapRZQ
 db$part_categories |> print(n = 100)

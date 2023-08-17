@@ -11,15 +11,16 @@ x <- filter(color_ct, inv_id == 114094)
 
 plot_fn <- function(x) {
   library(plotly, warn.conflicts = FALSE)
+  pct_txt <- paste0("(", round(100 * x$n / sum(x$n)), "%)")
   plot_ly(
     type = "treemap",
-    labels = paste0(x$name, "<br>", x$n, " parts",
+    labels = paste0(x$name, "<br>", x$n, " parts ", pct_txt,
       ifelse(x$is_trans, "<br>translucent", "")),
     values = x$n,
     parents = "",
     marker = list(colors = x$rgb)
   ) |>
-    layout(title = list(text = "asdf"), margin = list(t = 0, b = 0, l = 0, r = 0)) |>
+    layout(margin = list(t = 0, b = 0, l = 0, r = 0)) |>
     config(displayModeBar = FALSE)
 }
 
@@ -39,6 +40,8 @@ d <- sets %>%
     retail = currency(retail),
     brickeconomy_url = href(paste0("https://www.brickeconomy.com/set/",
       set_num)),
+    minifig_link = filter_cat_href("lego figures", "fig_num", minifig_ids,
+      labels = "name")
   ) |>
   as_trelliscope_df(
     name = "lego sets",
@@ -50,7 +53,7 @@ d <- sets %>%
   ) |>
   set_default_labels(lbls) |>
   set_default_sort("n_parts", dir = "desc") |>
-  set_default_layout(ncol = 4) |>
+  set_default_layout(ncol = 4, visible_filters = c("year", "theme")) |>
   add_inputs(
     input_radio(name = "own_it", label = "I own this set",
       options = c("no", "yes")),
@@ -60,22 +63,22 @@ d <- sets %>%
   add_view(
     name = "90s sets",
     filter_string("decade", values = "1990"),
-    # state_labels(lbls),
-    state_layout(ncol = 4),
+    state_labels(lbls),
+    state_layout(ncol = 4, visible_filters = "decade"),
     state_sort("year", dir = "asc")
   ) |>
   add_view(
     name = "Sets with 1000+ parts",
     filter_range("n_parts", min = 1000),
-    # state_labels(lbls),
-    # state_layout(ncol = 4),
+    state_labels(lbls),
+    state_layout(ncol = 4),
     state_sort("n_parts", dir = "desc")
   ) |>
   add_view(
     name = "Star Wars sets",
     filter_string("theme", values = "Star Wars"),
-    # state_labels(lbls),
-    # state_layout(ncol = 4),
+    state_labels(lbls),
+    state_layout(ncol = 4),
     state_sort("n_parts", dir = "desc")
   ) |>
   set_info_html("examples/lego/info.html")
@@ -103,7 +106,8 @@ d <- d |>
     n_versions = "Number of versions of the set",
     retail = "Retail price (USD) from BrickEconomy.com",
     decade = "Decade released",
-    brickeconomy_url = "View the set on BrickEconomy.com"
+    brickeconomy_url = "View the set on BrickEconomy.com",
+    minifig_link = "Link to display of minifigs in this set"
   )
 
 d <- d |> set_tags(
@@ -113,12 +117,6 @@ d <- d |> set_tags(
   colors = c("n_colors", "prim_color_name", "prim_color_hex"),
   links = c("rebrickable_url", "brickeconomy_url")
 )
-
-d$figures_link <- href(unlist(lapply(d$minifig_ids, function(ids) {
-  if (is.null(ids))
-    return(NA_character_)
-  paste0("#selectedDisplay=lego%20figures&labels=name&filter=var:fig_num;type:category;regexp:;metatype:string;val:", paste(ids, collapse = "#"))
-})))
 
 view_trelliscope(d)
 

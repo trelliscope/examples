@@ -256,14 +256,15 @@ __loadDisplayInfo__6fbd7f77({
       "sortable": false,
       "filterable": false,
       "tags": [],
-      "label": "figures_link",
+      "label": "Link to display of minifigs in this set",
       "type": "href",
-      "varname": "figures_link"
+      "varname": "minifig_link"
     }
   ],
   "state": {
     "layout": {
       "viewtype": "grid",
+      "activeSidebar": true,
       "page": 1,
       "ncol": 4,
       "type": "layout"
@@ -274,13 +275,14 @@ __loadDisplayInfo__6fbd7f77({
     },
     "sort": [
       {
-        "metatype": "number",
-        "dir": "desc",
+        "type": "sort",
         "varname": "n_parts",
-        "type": "sort"
+        "dir": "desc",
+        "metatype": "number"
       }
     ],
-    "filter": []
+    "filter": [],
+    "filterView": ["name", "year"]
   },
   "views": [
     {
@@ -288,30 +290,31 @@ __loadDisplayInfo__6fbd7f77({
       "state": {
         "layout": {
           "viewtype": "grid",
+          "activeSidebar": false,
           "page": 1,
           "ncol": 4,
           "type": "layout"
         },
         "labels": {
-          "varnames": ["set_num"],
+          "varnames": ["name", "year", "theme", "n_parts", "rebrickable_url"],
           "type": "labels"
         },
         "sort": [
           {
-            "metatype": "number",
-            "dir": "asc",
+            "type": "sort",
             "varname": "year",
-            "type": "sort"
+            "dir": "asc",
+            "metatype": "number"
           }
         ],
         "filter": [
           {
-            "values": [],
-            "regexp": null,
-            "metatype": "factor",
-            "filtertype": "category",
+            "type": "filter",
             "varname": "decade",
-            "type": "filter"
+            "filtertype": "category",
+            "metatype": "factor",
+            "regexp": null,
+            "values": [6]
           }
         ]
       }
@@ -321,30 +324,31 @@ __loadDisplayInfo__6fbd7f77({
       "state": {
         "layout": {
           "viewtype": "grid",
+          "activeSidebar": false,
           "page": 1,
-          "ncol": 3,
+          "ncol": 4,
           "type": "layout"
         },
         "labels": {
-          "varnames": ["set_num"],
+          "varnames": ["name", "year", "theme", "n_parts", "rebrickable_url"],
           "type": "labels"
         },
         "sort": [
           {
-            "metatype": "number",
-            "dir": "desc",
+            "type": "sort",
             "varname": "n_parts",
-            "type": "sort"
+            "dir": "desc",
+            "metatype": "number"
           }
         ],
         "filter": [
           {
-            "max": null,
-            "min": 1000,
-            "metatype": "number",
-            "filtertype": "numberrange",
+            "type": "filter",
             "varname": "n_parts",
-            "type": "filter"
+            "filtertype": "numberrange",
+            "metatype": "number",
+            "min": 1000,
+            "max": null
           }
         ]
       }
@@ -354,30 +358,31 @@ __loadDisplayInfo__6fbd7f77({
       "state": {
         "layout": {
           "viewtype": "grid",
+          "activeSidebar": false,
           "page": 1,
-          "ncol": 3,
+          "ncol": 4,
           "type": "layout"
         },
         "labels": {
-          "varnames": ["set_num"],
+          "varnames": ["name", "year", "theme", "n_parts", "rebrickable_url"],
           "type": "labels"
         },
         "sort": [
           {
-            "metatype": "number",
-            "dir": "desc",
+            "type": "sort",
             "varname": "n_parts",
-            "type": "sort"
+            "dir": "desc",
+            "metatype": "number"
           }
         ],
         "filter": [
           {
-            "values": ["Star Wars"],
-            "regexp": null,
-            "metatype": "string",
-            "filtertype": "category",
+            "type": "filter",
             "varname": "theme",
-            "type": "filter"
+            "filtertype": "category",
+            "metatype": "string",
+            "regexp": null,
+            "values": ["Star Wars"]
           }
         ]
       }

@@ -264,7 +264,7 @@ __loadDisplayInfo__6fbd7f77({
   "state": {
     "layout": {
       "viewtype": "grid",
-      "activeSidebar": true,
+      "sidebarActive": true,
       "page": 1,
       "ncol": 4,
       "type": "layout"

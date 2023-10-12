@@ -6,10 +6,8 @@ library(dplyr)
 sets <- readr::read_rds("examples/lego/_data/sets.rds")
 color_ct <- readr::read_csv("examples/lego/_data/set_color_ct.csv")
 
-x <- get_test_subset(color_ct, sets, by = "inv_id")
-x <- filter(color_ct, inv_id == 114094)
-
-plot_fn <- function(x) {
+plot_fn <- function(inv_id) {
+  x <- filter(color_ct, {{ inv_id }} == inv_id)
   library(plotly, warn.conflicts = FALSE)
   pct_txt <- paste0("(", round(100 * x$n / sum(x$n)), "%)")
   plot_ly(
@@ -24,13 +22,15 @@ plot_fn <- function(x) {
     config(displayModeBar = FALSE)
 }
 
+plot_fn(sets$inv_id[1])
+
 lbls <- c("name", "year", "theme", "n_parts", "rebrickable_url")
 
 d <- sets %>%
   mutate(
     img_url = panel_url(img_url),
     decade = factor(10 * (year %/% 10)),
-    color_map = panel_lazy(plot_fn, color_ct, by = "inv_id"),
+    color_map = panel_lazy(plot_fn),
     inv_id = as.character(inv_id),
     n_parts = number(ifelse(is.na(n_parts), 0, n_parts),
       digits = 0, log = FALSE),

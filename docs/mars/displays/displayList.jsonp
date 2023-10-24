@@ -1,9 +1,0 @@
-__loadDisplayList__713614ec([
-  {
-    "name": "mars rover",
-    "description": "Selected images taken by the Mars Curiosity rover from 2014-2015, with classifications",
-    "tags": [],
-    "keysig": null,
-    "thumbnailurl": "http://mars.jpl.nasa.gov/msl-raw-images/msss/00565/mhli/0565MH0003250050201853I01_DXXX.jpg"
-  }
-])

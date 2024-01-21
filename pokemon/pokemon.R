@@ -38,7 +38,8 @@ pk <- d |>
     name = "pokemon",
     path = "_public/pokemon"
   ) |>
-  set_default_layout(ncol = 6)
+  set_default_layout(ncol = 6) |>
+  set_default_labels(c("pokemon", "type_1", "ability_1", "pokedex"))
 
 view_trelliscope(pk)
 

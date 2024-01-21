@@ -54,7 +54,6 @@ dt <- as_trelliscope_df(d,
   set_default_labels(c("subjid", "mmse", "cdr")) |>
   set_default_sort("mmse") |>
   set_default_layout(ncol = 5, sidebar = TRUE,
-    visible_filters = c("orientation", "age", "cdr")) |>
-  set_
+    visible_filters = c("orientation", "age", "cdr"))
 
 view_trelliscope(dt)

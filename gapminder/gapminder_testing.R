@@ -1,6 +1,10 @@
 library(trelliscope)
 library(dplyr)
 library(ggplot2)
+# remotes::install_github("hafen/mustachewidget")
+library(mustachewidget)
+
+# stripped down (in size) version of gapminder to commit to js lib github
 
 # summarize gapminder by country
 d <- gap |>
@@ -21,27 +25,18 @@ d <- gap |>
 p <- ggplot(gap, aes(year, life_exp)) +
   geom_point() +
   facet_panels(vars(country, continent)) +
-  theme_minimal() +
-  labs(y = "Life expectancy")
+  theme_void()
 # note that if you print p you will get a trelliscope as before...
 
-d1 <- as_panels_df(p, panel_col = "lexp_time", as_plotly = TRUE)
+d1 <- as_panels_df(p, panel_col = "lexp_time")
 
-d2 <- as_panels_df(p, panel_col = "lexp_time_svg")
-
-p <- ggplot(gap, aes(year, life_exp)) +
-  geom_line(color = "#4E79A7", linewidth = 1) +
-  geom_point(color = "#4E79A7", size = 3) +
-  facet_panels(vars(country, continent), unfacet = "line") +
-  theme_minimal(base_size = 14) +
-  labs(y = "Life expectancy")
-
-d3 <- as_panels_df(p, panel_col = "lexp_time_unfacet")
-
-# join with our main dataset
 d <- left_join(d, d1, by = c("country", "continent"))
-d <- left_join(d, d2, by = c("country", "continent"))
-d <- left_join(d, d3, by = c("country", "continent"))
+
+plot_fn <- function(country)
+  mustache("<div style='width: 100%; height: 100%; border: 4px solid red; text-align: center;'>{{country}}</div>", list(country = country))
+
+d <- d %>%
+  mutate(html_panel = panel_lazy(plot_fn))
 
 d <- mutate(d,
   flag = panel_url(paste0(
@@ -58,9 +53,9 @@ d <- d |>
     dt_lexp_max_pct_chg = "Date of max % year-to-year change in life expectancy",
     dttm_lexp_max_pct_chg = "Date-time of max % year-to-year change in life expectancy",
     wiki_link = "Link to country Wikipedia entry",
-    lexp_time = "Plot of life expectancy over time (plotly)",
-    lexp_time_svg = "Plot of life expectancy over time (svg)",
-    lexp_time_unfacet = "Plot of life expectancy over time (unfaceted)",
+    lexp_time = "Plot of life expectancy over time (svg)",
+    lexp_time_png = "Plot of life expectancy over time (png)",
+    html_panel = "Dummy 'plot' to test html panels",
     flag = "Country flag"
   )
 
@@ -72,14 +67,15 @@ d <- d |>
 
 dt <- as_trelliscope_df(d, name = "Life expectancy",
   description = "Life expectancy over time by country",
-  path = "_public/gapminder")
+  path = "_public/gapminder_testing")
 
 # set panel options (if not specified, defaults are used)
 dt <- dt |>
   set_panel_options(
-    lexp_time_svg = panel_options(width = 600, height = 400, format = "svg")
+    lexp_time = panel_options(width = 600, height = 400, format = "svg"),
+    html_panel = panel_options(width = 300, height = 600)
   ) |>
-  set_primary_panel("lexp_time_unfacet")
+  set_primary_panel("lexp_time")
 
 # now set all the other stuff...
 dt <- dt |>

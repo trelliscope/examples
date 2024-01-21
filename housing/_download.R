@@ -54,7 +54,7 @@ cdat <- lapply(cnty_meta, function(x) {
   bind_rows()
 
 tidyr::nest(cdat, data = -c(1:5)) |>
-  readr::write_rds("examples/housing/_data/county.rds")
+  readr::write_rds("housing/_data/county.rds")
 
 # this has weekly as well... change "month" to "week" in the url
 metro_meta <- list(
@@ -115,15 +115,15 @@ filter(mdat, metric == "Share of Listings With a Price Cut") |> pull(value) |> r
 # [1] 0.009259259 0.481533129
 
 tidyr::nest(mdat, data = -c(1:2)) |>
-  readr::write_rds("examples/housing/_data/metro.rds")
+  readr::write_rds("housing/_data/metro.rds")
 
-# download.file("https://www2.census.gov/programs-surveys/popest/datasets/2020-2022/counties/totals/co-est2022-alldata.csv", destfile = "examples/housing/_data/census.csv")
+# download.file("https://www2.census.gov/programs-surveys/popest/datasets/2020-2022/counties/totals/co-est2022-alldata.csv", destfile = "housing/_data/census.csv")
 
-# cncs <- readr::read_csv("examples/housing/_data/census.csv") |>
+# cncs <- readr::read_csv("housing/_data/census.csv") |>
 #   select(STATE, COUNTY, POPESTIMATE2022)
 # names(cncs) <- c("state_fips", "muni_fips", "pop")
 
-# readr::write_rds(cncs, "examples/housing/_data/census.rds")
+# readr::write_rds(cncs, "housing/_data/census.rds")
 
 # metro_meta <- list(
 #   list(

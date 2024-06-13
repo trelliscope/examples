@@ -1,6 +1,6 @@
-library(trelliscopejs)
+library(trelliscope)
 library(dplyr)
- 
+
 d <- readr::read_rds("pokemon/_data/pokemon.rds") |>
   mutate(
     url_image = panel_url(url_image),

@@ -84,7 +84,7 @@ plot_pct_fn <- function(name, data) {
   ggplot(x, aes(x = year, y = pct * 1000, fill = sex)) +
     geom_col(alpha = 0.75, color = "white", linewidth = 0.1) +
     theme_minimal() +
-    scale_x_continuous(limits = c(1879, 2023), expand = c(0, 0),
+    scale_x_continuous(limits = c(1879, 2024), expand = c(0, 0),
       breaks = seq(1880, 2020, 20)) +
     scale_y_continuous(labels = scales::comma) +
     # scale_y_log10(labels = scales::comma,
@@ -96,7 +96,7 @@ plot_pct_fn <- function(name, data) {
       panel.grid.major = element_line(linewidth = 0.25),
       text = element_text(family = "Poppins")) +
     labs(x = "Year", y = "Babies with name per 100k babies named", title = name) +
-    annotate("text", x = 2022, y = 0, label = "purple = female, teal = male", hjust = 1, vjust = 1, family = "Poppins", color = "gray", size = 3)
+    annotate("text", x = 2023, y = 0, label = "purple = female, teal = male", hjust = 1, vjust = 1, family = "Poppins", color = "gray", size = 3)
 }
 
 plot_count_fn <- function(name, data) {
@@ -104,7 +104,7 @@ plot_count_fn <- function(name, data) {
   ggplot(x, aes(x = year, y = n, color = sex)) +
     geom_point(alpha = 0.75) +
     theme_minimal() +
-    scale_x_continuous(limits = c(1879, 2023), expand = c(0, 0),
+    scale_x_continuous(limits = c(1879, 2024), expand = c(0, 0),
       breaks = seq(1880, 2020, 20)) +
     # scale_y_continuous(labels = scales::comma) +
     scale_y_log10(labels = scales::comma, limits = c(3, nrng[2])) +
@@ -115,7 +115,7 @@ plot_count_fn <- function(name, data) {
       panel.grid.major = element_line(linewidth = 0.25),
       text = element_text(family = "Poppins")) +
     labs(x = "Year", y = "Babies with name", title = name) +
-    annotate("text", x = 2022, y = 3, label = "purple = female, teal = male", hjust = 1, vjust = 1, family = "Poppins", color = "gray", size = 3)
+    annotate("text", x = 2023, y = 3, label = "purple = female, teal = male", hjust = 1, vjust = 1, family = "Poppins", color = "gray", size = 3)
 }
 
 nd <- nd |>

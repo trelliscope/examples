@@ -16,6 +16,10 @@ read_and_calc <- function(x) {
       tmp <- dplyr::filter(tmp, date > idx_dt)
     }
   }
+  if (nrow(tmp) < 200) {
+    message("Not enough data... ignoring")
+    return(NULL)
+  }
   tmp$close[tmp$close <= 0] <- 1e-6
   tmp$sma200 <- SMA(tmp$close, n = 200)
   tmp$sma50 <- SMA(tmp$close, n = 50)
@@ -166,7 +170,7 @@ plot_fn <- function(symbol, prices) {
       showlegend = FALSE,
       margin = list(r = 3, l = 3, t = 3, b = 0, pad = 0)
     ) |>
-    config(displaylogo = FALSE)
+    plotly::config(displaylogo = FALSE)
 }
 
 

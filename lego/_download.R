@@ -8,6 +8,10 @@ page <- read_html("https://rebrickable.com/downloads/")
 
 hrefs <- html_elements(page, "li > span > a") %>% html_attr("href")
 
+if (!dir.exists("lego/_data/rebrickable")) {
+  dir.create("lego/_data/rebrickable", recursive = TRUE)
+}
+
 for (href in hrefs) {
   fl <- strsplit(basename(href), "\\?")[[1]][1]
   message(fl)

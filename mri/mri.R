@@ -1,4 +1,4 @@
-library(trelliscopejs)
+library(trelliscope)
 library(dplyr)
 library(readr)
 

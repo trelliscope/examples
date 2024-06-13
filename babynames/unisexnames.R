@@ -43,13 +43,13 @@ panel_fn <- function(name, data) {
       text = element_text(family = "Poppins")) +
     labs(x = "Year", y = "Count", title = name)
 
-  lgnd <- tibble(y = c(0, 100), x = 2020, txt = c("Male", "Female"))
+  lgnd <- tibble(y = c(0, 100), x = 2020, txt = c("Female", "Male"))
 
   p2 <- ggplot(x) +
     geom_rect(aes(xmin = year, xmax = year + 10, ymin = 100 * n_f / n,
-      alpha = n, ymax = 0), fill = "#58C1AB") +
+      alpha = n, ymax = 0), fill = "#7B16EF") +
     geom_rect(aes(xmin = year, xmax = year + 10, ymin = 100 * n_f / n,
-      alpha = n, ymax = 100), fill = "#7B16EF") +
+      alpha = n, ymax = 100), fill = "#58C1AB") +
     geom_text(data = lgnd, aes(x = x, y = y, label = txt), size = 5,
       hjust = 1, vjust = c(0, 1), nudge_x = -0.5, nudge_y = c(1, -1),
       family = "Poppins") + # color = "#777777"

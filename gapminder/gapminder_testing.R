@@ -33,7 +33,7 @@ d1 <- as_panels_df(p, panel_col = "lexp_time")
 d <- left_join(d, d1, by = c("country", "continent"))
 
 plot_fn <- function(country)
-  mustache("<div style='width: 100%; height: 100%; border: 4px solid red; text-align: center;'>{{country}}</div>", list(country = country))
+  mustache("<div style='width: 100%; height: 100%; border: 4px solid red; text-align: center; box-sizing: border-box;'>{{country}}</div>", list(country = country))
 
 d <- d %>%
   mutate(html_panel = panel_lazy(plot_fn))
@@ -100,3 +100,36 @@ dt <- dt |>
   )
 
 view_trelliscope(dt)
+
+
+dc <- gap |>
+  arrange(year) |>
+  group_by(continent) |>
+  mutate(pct_chg = 100 * (life_exp - lag(life_exp)) / lag(life_exp)) |>
+  summarise(
+    mean_lexp = number(mean(life_exp)),
+    mean_gdp = currency(mean(gdp_percap)),
+    .groups = "drop"
+  )
+
+# add some ggplots
+p <- ggplot(gap, aes(year, life_exp, group = country)) +
+  geom_point() +
+  facet_panels(vars(continent)) +
+  theme_void()
+# note that if you print p you will get a trelliscope as before...
+
+dc1 <- as_panels_df(p, panel_col = "lexp_time")
+
+dc <- left_join(dc, dc1, by = "continent")
+
+dct <- as_trelliscope_df(dc, name = "Life expectancy by continent",
+  description = "Life expectancy over time by continent",
+  path = "_public/gapminder_testing")
+
+dct <- dct |>
+  set_panel_options(
+    lexp_time = panel_options(width = 600, height = 400, format = "svg")
+  )
+
+view_trelliscope(dct)

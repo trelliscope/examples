@@ -1,2 +1,6 @@
 .DS_Store
 _ignore
+_data
+_data_raw
+_todo
+_public

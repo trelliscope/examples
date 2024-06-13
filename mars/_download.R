@@ -7,6 +7,7 @@ dir.create("mars/_data/rovers", showWarnings = FALSE, recursive = TRUE)
 api_key <- Sys.getenv("NASA_API_KEY")
 
 rovers <- c("curiosity", "opportunity", "perseverance", "spirit")
+# rovers <- c("opportunity", "spirit")
 
 rvdat <- list()
 for (rv in rovers) {

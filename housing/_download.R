@@ -88,7 +88,8 @@ metro_meta <- list(
   ),
   list(
     desc = "ZORI All Homes",
-    file = "https://files.zillowstatic.com/research/public_csvs/zori/Metro_zori_sm_month.csv?t=1696990222"
+    file = "https://files.zillowstatic.com/research/public_csvs/zori/Metro_zori_uc_sfr_sm_sa_month.csv?t=1718258158"
+    # file = "https://files.zillowstatic.com/research/public_csvs/zori/Metro_zori_sm_month.csv?t=1696990222"
   )
 )
 
@@ -98,6 +99,7 @@ metro_nm_map <- c(
 )
 
 mdat <- lapply(metro_meta, function(x) {
+  message(x$file)
   readr::read_csv(x$file) |>
   dplyr::filter(RegionType != "country") |>
   tidyr::pivot_longer(-c(1:5), names_to = "date", values_to = "value") |>

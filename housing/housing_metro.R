@@ -180,7 +180,7 @@ plot_fn <- function(metro, data) {
       # showlegend = FALSE,
       margin = list(r = 3, l = 3, t = 3, b = 0, pad = 0)
     ) |>
-    config(displaylogo = FALSE)
+    plotly::config(displaylogo = FALSE)
 }
 
 pd <- pd |>

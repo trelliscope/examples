@@ -55,4 +55,19 @@ dt <- dt |>
     `image attributes` = c("width", "height", "filesize", "hex", "hue")
   )
 
+dt <- dt |>
+  set_theme(
+    primary = "#c80000",
+    primary2 = "#f00000",
+    primary3 = "#960000",
+    background = "#222222",
+    background2 = "#444444",
+    background3 = "#333333",
+    bars = "#c80000",
+    text = "#ffffff",
+    text2 = "#ffffff",
+    text_disabled = "#bcbcbc",
+    logo = rover_icon_b64
+  )
+
 view_trelliscope(dt)
